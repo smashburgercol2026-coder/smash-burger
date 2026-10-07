@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet"<title></title>
+<style>
+:root{--bg:#faf7f2;--card:#fff;--tx:#1d1a17;--mu:#6e665e;--ac:#e8590c;--bd:#e8e1d7;--bn:#fff3e0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17140f;--card:#221e18;--tx:#f4eee6;--mu:#a69d92;--bd:#38322a;--bn:#3a2a14}}
+:root[data-theme="dark"]{--bg:#17140f;--card:#221e18;--tx:#f4eee6;--mu:#a69d92;--bd:#38322a;--bn:#3a2a14}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 110px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.bn{background:var(--bn);text-align:center;font-size:13px;padding:8px 12px}
+header{text-align:center;padding:20px 16px 8px}
+h1{margin:0;font-size:26px;letter-spacing:1px}
+.sub{color:var(--mu);font-size:14px;margin-top:4px}
+.links{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0}
+.links a{background:var(--ac);color:#fff;text-decoration:none;font-size:13px;padding:8px 14px;border-radius:20px}
+.links a.o{background:none;color:var(--ac);border:1px solid var(--ac)}
+nav{justify-content:flex-start;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5;border-bottom:1px solid var(--bd);display:flex;gap:8px;overflow-x:auto;padding:10px 12px}
+nav a{white-space:nowrap;text-decoration:none;color:var(--tx);font-size:13px;font-weight:600;padding:7px 12px;border:1px solid var(--bd);border-radius:18px;background:var(--card)}
+nav a.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+main{max-width:1180px;margin:0 auto;padding:8px 16px 110px}
+h2{font-size:18px;margin:24px 4px 10px;text-transform:uppercase;letter-spacing:.5px}
+.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:12px}
+.it{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.it h3{margin:0;font-size:15px}
+.it p{margin:0;color:var(--mu);font-size:13px;line-height:1.4;flex:1}
+.tg{font-size:11px;font-weight:700;color:var(--ac);text-transform:uppercase}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.pr{font-weight:700}.pr s{color:var(--mu);font-weight:400;font-size:13px;margin-right:6px}
+button{font:inherit;cursor:pointer}
+.add{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600}
+@media(min-width:900px){
+nav{justify-content:center;flex-wrap:wrap;padding:12px 24px}
+h1{font-size:36px}header{padding:32px 16px 12px}
+h2{font-size:22px;margin:32px 4px 14px}
+.it{padding:18px;transition:transform .15s,box-shadow .15s}
+.it:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.it h3{font-size:16px}.it p{font-size:14px}
+#bar{left:auto;right:24px;bottom:24px;width:auto;border:1px solid var(--bd);border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.2);padding:10px}
+#bar button{padding:13px 24px}
+#dr{align-items:center}
+#pn{border-radius:16px;max-height:80%}
+.add:hover,.links a:hover,#bar button:hover{filter:brightness(1.1)}
+nav a:hover{border-color:var(--ac)}
+}
+@media(max-width:480px){h1{font-size:22px}.it{padding:12px}.add{padding:9px 16px}}
+footer{text-align:center;color:var(--mu);font-size:12px;padding:20px 12px 120px}
+footer a{color:var(--ac)}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--bd);display:none;z-index:9}
+#bar button{width:100%;background:var(--ac);color:#fff;border:0;border-radius:10px;padding:13px;font-weight:700;font-size:15px}
+#dr{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:20;align-items:flex-end;justify-content:center}
+#dr.on{display:flex}
+#pn{background:var(--card);width:100%;max-width:520px;max-height:85%;overflow:auto;border-radius:16px 16px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.ci{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--bd);font-size:14px}
+.q{display:flex;align-items:center;gap:8px}
+.q button{width:26px;height:26px;border-radius:50%;border:1px solid var(--bd);background:none;color:var(--tx)}
+.tot{display:flex;justify-content:space-between;font-weight:700;font-size:17px;margin:14px 0 4px}
+.wa{display:block;text-align:center;background:#25a244;color:#fff;text-decoration:none;border-radius:10px;padding:13px;font-weight:700;margin-top:10px}
+.x{float:right;background:none;border:0;font-size:22px;color:var(--tx)}
+
+html:root:root:root{--bg:#050505;--card:#15110c;--tx:#f5ece0;--mu:#b3a798;--bd:#3a2c18;--ac:#f08a1c;--bn:#2a1a08}
+body{background:#050505 radial-gradient(circle at 20% 10%,#1d1d1d 0,transparent 40%),radial-gradient(circle at 80% 60%,#171717 0,transparent 45%),repeating-linear-gradient(45deg,#0a0a0a 0 3px,#101010 3px 6px)}
+header{background:#0a0a0a;border-bottom:1px solid var(--bd)}
+h1,.pt,h2{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400}
+h1{color:var(--ac);letter-spacing:2px}
+[hidden]{display:none!important}
+#home{max-width:560px;margin:0 auto;padding:22px 18px 110px;display:grid;gap:18px}
+.pill{cursor:pointer;border:0;font:inherit;color:inherit;border-radius:70px;padding:5px;background:linear-gradient(135deg,#ffd98a,#c9741a 35%,#ffb347 60%,#7a3f08);box-shadow:0 0 20px rgba(240,138,28,.4);transition:transform .15s,box-shadow .15s}
+.pill:hover{transform:scale(1.02);box-shadow:0 0 30px rgba(240,138,28,.75)}
+.pi{display:flex;align-items:center;gap:10px;min-height:84px;border-radius:66px;padding:8px 18px;background:radial-gradient(ellipse at center,#1b1209,#050505 75%)}
+.pe{font-size:38px;width:56px;text-align:center;filter:drop-shadow(0 0 6px rgba(240,138,28,.6))}
+.pm{flex:1;text-align:center;padding-right:56px}
+.pt{display:block;font-size:22px;letter-spacing:1px;color:#ff8a1f;text-transform:uppercase;text-shadow:0 2px 0 #5a2a00}
+.ps{display:block;font-size:9.5px;letter-spacing:.8px;color:#f3e3c8;text-transform:uppercase;margin-top:2px}
+.sec{max-width:1180px;margin:0 auto}
+.bk{background:none;border:1px solid var(--ac);color:var(--ac);border-radius:20px;padding:7px 14px;font-weight:600;margin:14px 4px 0}
+h2{color:var(--ac);font-size:26px;letter-spacing:1px}
+@media(min-width:900px){#home{max-width:960px;grid-template-columns:1fr 1fr;gap:22px;padding-top:32px}.pt{font-size:26px}.ps{font-size:11px}}
+@media(max-width:480px){.pt{font-size:19px}.pe{font-size:32px;width:46px}.pm{padding-right:46px}}
+</style></head><body>
+<header><h1>🍔 Smash Burger</h1><div class="sub">Menú Domicilios · Bogota , Suba Niza</div>
+<div class="links"></a><a href="https://wa.me/573008298317">Pide por WhatsApp</a></div></header>
+<div id="home"></div>
+<main id="m"></main>
+<footer>Síguenos: <a href="https://www.instagram.com/">Instagram</a> · <a href="https://www.tiktok.com/@smashburger503">TikTok</a><br>🔥 El antojo no espera. ¡Pide tu Smash Burger y disfruta en casa!
+
+📍 Suba – Niza, Bogotá · 🛵 Solo domicilios
+</footer>
+<div id="bar"><button onclick="op()" id="bb"></button></div>
+<div id="dr" onclick="if(event.target===this)cl()"><div id="pn"></div></div>
+<script>
+var P="Adicional de crujientes papitas a la francesa.";
+var D=[
+["Smash burger!",[
+["Big Boos + Papitas","Doble carne smash,queso americano x2, pan brioche,chimichurri,chorizo santa rosano, salsa de la casa, porción de papas a la francesa.",10000],
+["Golden Smash + Papitas","Pan brioche, Doble carne Smash,queso mozarela,cebolla caramelizada, salsa de la casa,vegetales,doble tocineta, papitas a la francesa.",10000],
+["La imperial + Papitas","Doble carne smash, queso americano x2, pan brioche,tocineta,cebolla crispy, salsa de la casa, vegetales, peperoni, papas a la francesa.",10000],
+["Clasica + Papitas","carne smash, queso mozarela, jamon , pan brioche, lechuga, cebolla caramelizada, tomate, salsa de la casa, papitas a la francesa.",10000],
+]],
+["SALCHIPAPAS",[
+["La toxica","200g de papa,chorizo ranchero , trocitos de cerdo bbq ,chongo, queso gratinado , tocineta,salsa de la casa ",10000,],
+["La Sinverguenza","200g de papa, salchicha ranchera,chongo,trocitos de pollo bbq , queso gratinado trocitos de tocineta ,  salsa de la casa.",10000],
+["La Envidiosa","200g de papa, salchicha ranchera, chongo,queso gratinado,salsa de la casa.",10000],
+["Melo merezco","200g de papa,salchicha suiza,chongo,pollo,cerdo,queso gratinado,pedazos de chicharon ahumado, salsa de la casa",10000]]],
+["MAZORCADAS",[
+["La mutante","200gr de maiz tierno,chongo,trocitos de pollo, queso gratinado , salsa de la casa,salsa de la casa.",10000],
+["Quien se comio el maiz","200gr de maiz tierno,pollo , cerdo en bbq,queso gratinado , tocineta , salsa de la casa .",43000],
+["La que daña la dieta","200gr de maiz tierno , chongo , trozos de cerdo y pollo ahumado , chorizo artesanal , queso deretido , tocineta crujiente ,salsa de la casa .",43000],
+]],
+["PERROS ESPECIALES ",[
+["El pecador + Papitas","salchicha tipo americana,chongo, cebolla caramelizada, queso gratinado, salsa de la casa, papitas a la francesa.",36000],
+["El Descontrol + Papitas","salchicha suiza ,chongo,queso gratinado,tocineta, salsa de la casa , papitas a la francesa.",36000],
+["El Dragon + Papitas"," doble salchicha tipo americana , chongo , jamon de cerdo,queso gratinado,tocineta salsa de la casa, papitas a la francesa.",36000],
+["El Patron + Papitas","trozos de pollo y cerdo,chorizo , jamon, queso gratinado ,tocineta , maiz tierno ,  salsa de la casa, papitas a la francesa.",43000],
+]],
+["ASADOS",[
+["Pechuga Gratinada + Papitas","200gr de carne Angus certificada smash con cebolla, queso americano x2, pan brioche, salsa Bru red pepper, salsa Bru Burgers, papitas a la francesa.",41000],
+["Pechuga Asada + Papitas","160gr de carne Angus, queso americano x2, queso mozzarella, pan brioche, salsa Bru Burgers, bacon en reducción de miel picante, queso crema, jalapeños y porción de papas.",42000,"Nuevo · Recomendado"],
+["Churasco + Papitas","200gr de carne Angus certificada, queso americano x2, pan brioche, pepperoni, cebolla crispy, queso crema, salsa Bru red pepper, salsa Bru Burgers, papitas a la francesa.",43000],
+]],
+["ALITAS",[
+["Alitas Bbq + Papitas","130gr de carne Angus certificada, queso americano x2, pan brioche, tocineta ahumada al grill x2, lechuga, cebolla, tomate, salsa Bru Burgers, papitas a la francesa.",37000],
+["Alitas Picantes + Papitas","200gr de carne Angus certificada, queso americano x2, pan brioche, tocineta ahumada al grill x4, lechuga, cebolla, tomate, salsa Bru Burgers, papitas a la francesa.",40000],
+["Alitas Brosther + Papitas","200gr de carne Angus certificada, queso americano x2, pan brioche, tocineta ahumada al grill x4, lechuga, cebolla, tomate, salsa Bru Burgers, papitas a la francesa.",40000],
+]],
+["Bebida",[
+["Coca Cola 400ml","Disfruta de tus burgers con una rica Coca Cola. 269 ml",6000],
+["Colombianal","Disfruta de tus burgers con una rica Coca Cola. 269 ml",6000],
+["Manzana","Disfruta de tus burgers con una rica Coca Cola. 269 ml",6000],
+["Mr Tea","Disfruta de tus burgers con una rica Coca Cola. 269 ml",6000],
+["Sprite","Disfruta de tus burgers con una rica Coca Cola. 269 ml",6000],
+["Bretaña","Disfruta de tus burgers con una rica Coca Cola. 269 ml",6000],
+["Hatsu","Disfruta la intensidad de una Coca Cola ZERO, sin azúcar. 269 ml",6000]]],
+["Sandwich",[
+["Sandwich de pollo + Papitas","400gr de carne Angus Smash, queso americano x5, pan brioche, pepinillos, salsa de la casa, papitas a la francesa.",50000],
+["Sandwich de atun + Papitas","240gr de carne Angus smash, triple bacon, triple queso americano, pan brioche, cebolla, salsa Bru Burgers, papitas a la francesa.",45000]]]
+];
+var C={},$=function(i){return document.getElementById(i)};
+var f=function(n){return"$"+n.toLocaleString("es-CO")};
+var h="",nv="";
+D.forEach(function(c,i){
+nv+='<a href="#c'+i+'">'+c[0]+'</a>';
+h+='<section class="sec" id="c'+i+'" hidden><button class="bk" onclick="home()">‹ Volver al menú</button><h2>'+c[0]+'</h2><div class="g">';
+c[1].forEach(function(p,j){
+h+='<div class="it">'+(p[3]?'<span class="tg">'+p[3]+'</span>':'')+'<h3>'+p[0].replace(/&/g,"&amp;")+'</h3><p>'+p[1].replace(/&/g,"&amp;")+'</p><div class="row"><span class="pr">'+(p[4]?'<s>'+f(p[4])+'</s>':'')+f(p[2])+'</span><button class="add" onclick="ad('+i+','+j+')">Agregar</button></div></div>';
+});
+h+='</div></section>';
+});
+var S=["Los favoritos que tienes que probar","Para los amantes a la salchipapas","las mejores mazorcadas de la ciudad ","Amantes a los perros","Asados especiales ","Alitas provocativas ","Todas las bebidas ","Sandwich de Calidad ",],I=I=I=["🍔","🍟","🌽","🌭","🥩","🍗","🥤","🥪"],ph="";
+D.forEach(function(c,i){ph+='<button class="pill" onclick="go('+i+')"><span class="pi"><span class="pe">'+I[i]+'</span><span class="pm"><span class="pt">'+c[0]+'</span><span class="ps">'+S[i]+'</span></span></span></button>'});
+$("home").innerHTML=ph;$("m").innerHTML=h;
+function go(i){$("home").hidden=true;document.querySelectorAll(".sec").forEach(function(e){e.hidden=true});$("c"+i).hidden=false;scrollTo(0,0)}
+function home(){document.querySelectorAll(".sec").forEach(function(e){e.hidden=true});$("home").hidden=false;scrollTo(0,0)}
+function ad(i,j){var p=D[i][1][j],k=i+"-"+j;C[k]=C[k]||{n:p[0],p:p[2],q:0};C[k].q++;up()}
+function ch(k,d){C[k].q+=d;if(C[k].q<=0)delete C[k];up();rd()}
+function sm(){var q=0,t=0;for(var k in C){q+=C[k].q;t+=C[k].q*C[k].p}return[q,t]}
+function up(){var s=sm();$("bar").style.display=s[0]?"block":"none";$("bb").textContent="Ver carrito ("+s[0]+") · "+f(s[1])}
+function rd(){var s=sm(),o='<button class="x" onclick="cl()">×</button><h2 style="margin-top:0">Tu pedido</h2>';
+if(!s[0]){cl();return}
+var m="Hola Smash Burger, quiero pedir a domicilio:%0A";
+for(var k in C){var c=C[k];o+='<div class="ci"><span>'+c.n.replace(/&/g,"&amp;")+'<br><small>'+f(c.p*c.q)+'</small></span><span class="q"><button onclick="ch(\''+k+'\',-1)">−</button>'+c.q+'<button onclick="ch(\''+k+'\',1)">+</button></span></div>';m+=c.q+"x "+encodeURIComponent(c.n)+"%0A"}
+o+='<div class="tot"><span>Total</span><span>'+f(s[1])+'</span></div>';
+o+=s[1]>=150000?'<small>🛵 ¡Domicilio gratis!</small>':'<small>Te faltan '+f(150000-s[1])+' para domicilio gratis</small>';
+o+='<a class="wa" href="https://wa.me/573008298317?text='+m+"Total: "+encodeURIComponent(f(s[1]))+'">Pedir por WhatsApp</a>';
+$("pn").innerHTML=o}
+function op(){rd();$("dr").classList.add("on")}
+function cl(){$("dr").classList.remove("on")}
+</script>
+</body>
+</html>
