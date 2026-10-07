@@ -147,7 +147,7 @@ h+='<div class="it">'+(p[3]?'<span class="tg">'+p[3]+'</span>':'')+'<h3>'+p[0].r
 });
 h+='</div></section>';
 });
-var S=["Los favoritos que tienes que probar","Para los amantes a la salchipapas","las mejores mazorcadas de la ciudad ","Amantes a los perros","Asados especiales ","Alitas provocativas ","Todas las bebidas ","Sandwich de Calidad ",],I=I=I=["🍔","🍟","🌽","🌭","🥩","🍗","🥤","🥪"],ph="";
+var S=["Los favoritos que tienes que probar","Para los amantes a la salchipapas","las mejores mazorcadas de la ciudad ","Amantes a los perros","Asados especiales ","Alitas provocativas ","Todas las bebidas ","Sandwich de Calidad ",],I=["🍔","🍟","🌽","🌭","🥩","🍗","🥤","🥪"],ph="";
 D.forEach(function(c,i){ph+='<button class="pill" onclick="go('+i+')"><span class="pi"><span class="pe">'+I[i]+'</span><span class="pm"><span class="pt">'+c[0]+'</span><span class="ps">'+S[i]+'</span></span></span></button>'});
 $("home").innerHTML=ph;$("m").innerHTML=h;
 function go(i){$("home").hidden=true;document.querySelectorAll(".sec").forEach(function(e){e.hidden=true});$("c"+i).hidden=false;scrollTo(0,0)}
